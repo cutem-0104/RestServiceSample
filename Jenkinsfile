@@ -15,6 +15,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'echo \"test ${env.BRANCH_NAME}\"'
                 sh 'rm -rf RestServiceSample'
                 sh 'git clone https://github.com/cutem-0104/RestServiceSample.git'
                 sh 'cd RestServiceSample && gradle clean test'
