@@ -13,8 +13,8 @@ pipeline {
         label 'master'
     }
     environment {
-        mysqlserver = ${MYSQL_SERVER}
-        mysqlpassword = ${MYSQL_PASSWORD}
+        mysqlserver = "${MYSQL_SERVER}"
+        mysqlpassword = "${MYSQL_PASSWORD}"
     }
     agent {
         docker {
