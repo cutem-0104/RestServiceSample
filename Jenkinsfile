@@ -10,10 +10,20 @@ def attachmentPayload = [[
 
 pipeline {
     agent {
-        docker { image 'osdn/slash-build' }
+        label 'master'
+    }
+    environment {
+        mysqlserver = "${MYSQL_SERVER}"
+        mysqlpassword = "${MYSQL_PASSWORD}"
     }
     stages {
         stage('Test') {
+            agent {
+                docker {
+                    image 'osdn/slash-build'
+                    args '-e MYSQL_SERVER=${mysqlserver} -e MYSQL_PASSWORD=${mysqlpassword}'
+                }
+            }
             steps {
                 //sh 'rm -rf RestServiceSample'
                 //sh 'git clone https://github.com/cutem-0104/RestServiceSample.git'
