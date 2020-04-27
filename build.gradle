@@ -25,6 +25,7 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	implementation('org.flywaydb:flyway-core')
+	compile group: 'jp.co.future', name: 'uroborosql', version: '0.18.0'
 }
 
 war {

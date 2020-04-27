@@ -37,4 +37,6 @@ bin
 *.swp
 *.bak
 
+.vscode
+
 gradle.properties
