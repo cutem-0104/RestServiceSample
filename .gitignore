@@ -36,3 +36,5 @@ bin
 *.log
 *.swp
 *.bak
+
+gradle.properties
